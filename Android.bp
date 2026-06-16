@@ -1,14 +1,18 @@
 android_app_import {
     name: "ViPER4AndroidFX",
     owner: "ViperFX",
-    apk: "system-ext/app/ViPER4AndroidFX/ViPER4AndroidFX.apk",
+    apk: "system/priv-app/ViPER4AndroidFX/ViPER4AndroidFX.apk",
+    privileged: true,
     preprocessed: true,
     presigned: true,
     dex_preopt: {
         enabled: false,
     },
     overrides: ["AudioFX", "MusicFX"],
-    system_ext_specific: true,
+    required: [
+        "privapp-permissions-viper4android.xml",
+        "libv4a_re",
+    ],
 }
 
 cc_prebuilt_library_shared {
@@ -42,4 +46,10 @@ cc_prebuilt_library_shared {
     relative_install_path: "soundfx",
     prefer: true,
     soc_specific: true,
+}
+
+prebuilt_etc {
+    name: "privapp-permissions-viper4android.xml",
+    src: "permissions/privapp-permissions-viper4android.xml",
+    sub_dir: "permissions",
 }
