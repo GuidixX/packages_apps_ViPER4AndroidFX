@@ -12,30 +12,31 @@ android_app_import {
 }
 
 cc_prebuilt_library_shared {
-    name: "libv4a_re",
+    name: "libv4a_aidl",
     strip: {
         none: true,
     },
     target: {
         android_arm: {
             srcs: [
-                "vendor/lib/soundfx/libv4a_re.so",
+                "vendor/lib/soundfx/libv4a_aidl.so",
             ],
         },
         android_arm64: {
             srcs: [
-                "vendor/lib64/soundfx/libv4a_re.so",
+                "vendor/lib64/soundfx/libv4a_aidl.so",
             ],
         },
     },
     shared_libs: [
-        "libaudioutils",
+        "libbase",
+        "libbinder_ndk",
         "libcutils",
         "liblog",
-        "libc++",
         "libc",
         "libm",
         "libdl",
+        "libfmq",
     ],
     ignore_max_page_size: true,
     compile_multilib: "both",

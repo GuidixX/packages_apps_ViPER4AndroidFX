@@ -11,8 +11,8 @@ Integrate V4A by completing these three steps:
 2.  **Audio Effects:** Add these lines to the `<libraries>` block in **`audio_effects.xml`** (`/vendor/etc/` or `/etc/`):
 
     ```xml
-    <library name="v4a_re" path="libv4a_re.so"/>
-    <effect name="v4a_standard_re" library="v4a_re" uuid="90380da3-8536-4744-a6a3-5731970e640f"/>
+    <library name="v4a_aidl" path="libv4a_aidl.so"/>
+    <effect name="v4a_standard_aidl" library="v4a_aidl" uuid="90380da3-8536-4744-a6a3-5731970e640f" type="7261676f-6d75-7369-6364-28e2fd3ac39e"/>
     ```
 
 3.  **SELinux Policy:** Add these rules to your **`audioserver.te`** file:
